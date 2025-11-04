@@ -187,10 +187,10 @@ const AssignmentsPage = () => {
               실무 중심의 프로젝트 과제로 성장하세요
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
               📝 과제 대시보드
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto px-4">
               GitHub 기반 제출 시스템으로 <span className="font-semibold">실제 협업 경험</span>을 쌓아보세요
             </p>
             
@@ -225,7 +225,7 @@ const AssignmentsPage = () => {
                 <span className="mr-2">📊</span>
                 진행 상태
               </label>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {[
                   { value: 'all', label: '전체', color: 'gray', icon: '📋' },
                   { value: 'pending', label: '진행 중', color: 'blue', icon: '⏳' },
@@ -236,14 +236,14 @@ const AssignmentsPage = () => {
                   <button
                     key={status.value}
                     onClick={() => setFilterStatus(status.value)}
-                    className={`flex items-center px-4 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
+                    className={`flex items-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
                       filterStatus === status.value
                         ? `bg-gradient-to-r from-${status.color}-500 to-${status.color}-600 text-white shadow-lg shadow-${status.color}-500/25`
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
                     }`}
                   >
-                    <span className="mr-2">{status.icon}</span>
-                    {status.label}
+                    <span className="mr-1 sm:mr-2">{status.icon}</span>
+                    <span className="hidden sm:inline">{status.label}</span>
                   </button>
                 ))}
               </div>
@@ -255,7 +255,7 @@ const AssignmentsPage = () => {
                 <span className="mr-2">🎭</span>
                 과제 유형
               </label>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {[
                   { value: 'all', label: '전체', icon: '📁' },
                   { value: 'quiz', label: '퀴즈', icon: '❓' },
@@ -265,14 +265,14 @@ const AssignmentsPage = () => {
                   <button
                     key={type.value}
                     onClick={() => setFilterType(type.value)}
-                    className={`flex items-center px-4 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
+                    className={`flex items-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
                       filterType === type.value
                         ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white shadow-lg shadow-purple-500/25'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
                     }`}
                   >
-                    <span className="mr-2">{type.icon}</span>
-                    {type.label}
+                    <span className="mr-1 sm:mr-2">{type.icon}</span>
+                    <span className="hidden sm:inline">{type.label}</span>
                   </button>
                 ))}
               </div>
@@ -321,27 +321,27 @@ const AssignmentsPage = () => {
               </div>
 
               {/* Assignment Content */}
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-3xl">{getTypeIcon(assignment.type)}</span>
+              <div className="p-4 sm:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl sm:text-3xl">{getTypeIcon(assignment.type)}</span>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
+                    <div className="flex-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-indigo-600 transition-colors duration-300">
                         {assignment.title}
                       </h3>
-                      <p className="text-gray-600 font-medium">
+                      <p className="text-sm sm:text-base text-gray-600 font-medium">
                         📚 {assignment.courseTitle}
                       </p>
                     </div>
                   </div>
                   
-                  <div className="flex flex-col items-end space-y-3">
-                    <span className={`px-4 py-2 rounded-2xl text-sm font-bold backdrop-blur-sm ${getStatusColor(assignment.status)}`}>
+                  <div className="flex flex-row sm:flex-col items-center sm:items-end space-x-2 sm:space-x-0 sm:space-y-3">
+                    <span className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-xs sm:text-sm font-bold backdrop-blur-sm ${getStatusColor(assignment.status)}`}>
                       {getStatusText(assignment.status)}
                     </span>
-                    <span className={`px-3 py-1.5 rounded-2xl text-xs font-bold ${getDifficultyColor(assignment.difficulty)}`}>
+                    <span className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-2xl text-xs font-bold ${getDifficultyColor(assignment.difficulty)}`}>
                       {assignment.difficulty}
                     </span>
                   </div>
@@ -440,11 +440,11 @@ const AssignmentsPage = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
                     to={`/assignments/${assignment.id}`}
-                    className="group flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-6 rounded-2xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-semibold text-center shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/40 transform hover:scale-105"
+                    className="group flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-2xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-semibold text-center shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/40 transform hover:scale-105"
                   >
                     <div className="flex items-center justify-center">
-                      <span>{assignment.status === 'pending' ? '🚀 과제 시작하기' : '📋 과제 확인하기'}</span>
-                      <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="text-sm sm:text-base">{assignment.status === 'pending' ? '🚀 과제 시작하기' : '📋 과제 확인하기'}</span>
+                      <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
@@ -452,10 +452,10 @@ const AssignmentsPage = () => {
                   
                   <Link
                     to={`/courses/${assignment.courseId}`}
-                    className="group bg-white border-2 border-indigo-200 text-indigo-600 py-4 px-6 rounded-2xl hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300 font-semibold text-center shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="group bg-white border-2 border-indigo-200 text-indigo-600 py-3 sm:py-4 px-4 sm:px-6 rounded-2xl hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300 font-semibold text-center shadow-lg hover:shadow-xl transform hover:scale-105"
                   >
                     <div className="flex items-center justify-center">
-                      <span>📚 강의 보기</span>
+                      <span className="text-sm sm:text-base">📚 강의 보기</span>
                     </div>
                   </Link>
                 </div>

@@ -35,7 +35,7 @@ const HomePage = () => {
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-8">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 학습의 새로운
               </span>
@@ -45,15 +45,15 @@ const HomePage = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              실무 중심의 MVP 개발 교육 플랫폼에서 <br />
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed px-4">
+              실무 중심의 MVP 개발 교육 플랫폼에서 <br className="hidden sm:block" />
               <span className="text-indigo-600 font-semibold">이론과 실습을 동시에</span> 경험하세요
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 px-4">
               <Link
                 to="/courses"
-                className="group bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center"
+                className="group w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 flex items-center justify-center"
               >
                 <span>🚀 강의 시작하기</span>
                 <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ const HomePage = () => {
               
               <Link
                 to="/dashboard"
-                className="group bg-white text-gray-700 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-gray-200 flex items-center"
+                className="group w-full sm:w-auto bg-white text-gray-700 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 border border-gray-200 flex items-center justify-center"
               >
                 <span>📊 대시보드 보기</span>
               </Link>
